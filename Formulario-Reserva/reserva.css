@@ -1,0 +1,161 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #eef5f9;
+    color: #3c4858;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+}
+
+.booking-container {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.form-icon {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    color: #4285F4;
+}
+
+.booking-form h2 {
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.booking-form p {
+    margin-bottom: 2rem;
+    color: #8492a6;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #dce4e8;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    background-color: #f8fafc;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3498db;
+    background-color: #fff;
+}
+
+.date-time-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.date-time-group .form-group {
+    flex: 1;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #4285F4;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #3367d6;
+}
+
+.calendar-btn {
+    background-color: white;
+    color: #4285F4;
+    border: 1px solid #4285F4;
+    padding: 0.9rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.calendar-btn:hover {
+    background-color: #f0f7ff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-icon {
+    font-size: 3rem;
+    color: #34A853;
+    margin-bottom: 15px;
+}
+
+.close-modal {
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}

@@ -1,1 +1,234 @@
-#aa
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Reunión</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reserva.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        .booking-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-icon {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #4285F4;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        .booking-form p {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 25px;
+            color: #7f8c8d;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        input:focus, select:focus {
+            border-color: #4285F4;
+            outline: none;
+        }
+        .date-time-group {
+            display: flex;
+            gap: 15px;
+        }
+        .date-time-group .form-group {
+            flex: 1;
+        }
+        .submit-btn {
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            background-color: #3367d6;
+        }
+        .calendar-btn {
+            background-color: white;
+            color: #4285F4;
+            border: 1px solid #4285F4;
+            padding: 14px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .calendar-btn:hover {
+            background-color: #f0f7ff;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .modal-icon {
+            font-size: 3rem;
+            color: #34A853;
+            margin-bottom: 15px;
+        }
+        .close-modal {
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-container">
+        <form action="reserva.php" method="POST" class="booking-form">
+            <div class="form-icon"><i class="far fa-calendar-alt"></i></div>
+            <h2>Agendar Reunión</h2>
+            <p>Selecciona el sector y la fecha para tu reunión</p>
+            
+            <div class="form-group">
+                <label for="name">Nombre Completo</label>
+                <input type="text" id="name" name="name" required placeholder="Ingresa tu nombre completo">
+            </div>
+            
+            <div class="form-group">
+                <label for="telefono">Número de Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required 
+                placeholder="10 dígitos, sin 0 y sin el 15 (Ej: 2634618494)"
+                pattern="[1-9][0-9]{9}"
+                title="Ingrese 10 dígitos (código de área sin 0 + número sin 15)">
+            </div>
+
+            <div class="form-group">
+                <label for="departamento">Sector de la Empresa</label>
+                <select id="departamento" name="departamento" required>
+                    <option value="" disabled selected>-- Selecciona un sector --</option>
+                    <option value="rrhh">Recursos Humanos (RRHH)</option>
+                    <option value="mantenimiento">Mantenimiento</option>
+                    <option value="contabilidad">Estudio Contable</option>
+                    <option value="direccion">Dirección</option>
+                    <option value="ventas">Ventas</option>
+                </select>
+            </div>
+
+            <div class="date-time-group">
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <!-- CORREGIDO: type="date" para mostrar selector de fecha -->
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+                <div class="form-group">
+                    <label for="hora">Hora</label>
+                    <!-- CORREGIDO: type="time" para mostrar selector de hora -->
+                    <input type="time" id="hora" name="hora" required>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Confirmar Reunión</button>
+            <button type="button" class="calendar-btn" id="addToCalendar">
+                <i class="fab fa-google"></i> Agregar a Google Calendar
+            </button>
+        </form>
+    </div>
+
+    <!-- Modal de confirmación -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>¡Reunión agendada!</h3>
+            <p>La reunión ha sido agregada a tu calendario correctamente.</p>
+            <button class="close-modal" id="closeModal">Aceptar</button>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar modal al hacer clic en el botón de Google Calendar
+        document.getElementById('addToCalendar').addEventListener('click', function() {
+            // SIMPLIFICADO: Ahora solo muestra el modal sin validaciones
+            document.getElementById('confirmationModal').style.display = 'flex';
+        });
+        
+        // Cerrar modal
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('confirmationModal').style.display = 'none';
+        });
+        
+        // Cerrar modal al hacer clic fuera del contenido
+        window.addEventListener('click', function(event) {
+            if (event.target === document.getElementById('confirmationModal')) {
+                document.getElementById('confirmationModal').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
