@@ -14,12 +14,12 @@ Cada formulario:
 
 #Propósito de Aprendizaje
 Este proyecto me permitió practicar:
-Estructuras HTML5 semánticas
-Diseño CSS moderno (Flexbox, Grid)
-Programación PHP orientada a procedimientos
-Consultas SQL preparadas
-Patrones de validación de formularios
-Manejo de sesiones (en algunos formularios)
+- Estructuras HTML5 semánticas
+- Diseño CSS moderno (Flexbox, Grid)
+- Programación PHP orientada a procedimientos
+- Consultas SQL preparadas
+- Patrones de validación de formularios
+- Manejo de sesiones (en algunos formularios)
 
 
 #Para probar localmente es necesario:
