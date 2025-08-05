@@ -23,7 +23,7 @@ Este proyecto me permitió practicar:
 
 
 #Para probar localmente es necesario:
-Servidor local: XAMPP/WAMP/MAMP instalado
-PHP: Versión 7.4 o superior
-MySQL: Versión 5.7 o superior
-Navegador: Chrome/Firefox actualizado
+- Servidor local: XAMPP/WAMP/MAMP instalado
+- PHP: Versión 7.4 o superior
+- MySQL: Versión 5.7 o superior
+- Navegador: Chrome/Firefox actualizado
