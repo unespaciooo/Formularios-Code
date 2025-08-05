@@ -1,1 +1,49 @@
-#asda
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MÓDULO DE UPLOADS</title>
+    <link rel="stylesheet" href="upload.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="upload-container">
+        <form action="upload.php" method="POST" enctype="multipart/form-data" class="upload-form">
+            <h1>MÓDULO DE UPLOADS</h1>
+            
+            <div class="form-group">
+                <label for="file-title">INGRESE SUS DATOS</label>
+                <input type="text" id="file-title" name="file_title" placeholder="Ingrese aquí su Nombre y Apellido" required>
+            </div>
+
+            <div class="form-group">
+                <label for="file-upload" class="file-upload-label">
+                    <div class="file-upload-design">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                        <p>Arrastra y suelta tu archivo aquí</p>
+                        <p class="file-upload-browse">o busca en tu equipo</p>
+                        <span id="file-name-display"></span>
+                    </div>
+                </label>
+                <input type="file" id="file-upload" name="document" required>
+            </div>
+            
+            <button type="submit" class="submit-btn">Click aquí para cargar el archivo</button>
+        </form>
+    </div>
+    <script>
+        const fileInput = document.getElementById('file-upload');
+        const fileNameDisplay = document.getElementById('file-name-display');
+        fileInput.addEventListener('change', function() {
+            if (this.files && this.files.length > 0) {
+                fileNameDisplay.textContent = `Archivo seleccionado: ${this.files[0].name}`;
+            } else {
+                fileNameDisplay.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>

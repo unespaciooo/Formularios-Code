@@ -1,0 +1,111 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+}
+
+.upload-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+}
+
+.upload-form h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #343a40;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Ocultamos el input de archivo por defecto */
+input[type="file"] {
+    display: none;
+}
+
+/* Estilo para el label que simula el área de subida */
+.file-upload-label {
+    border: 2px dashed #adb5bd;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.file-upload-label:hover {
+    border-color: #490251;
+    background-color: #f8f9fa;
+}
+
+.file-upload-design svg {
+    color: hsl(265, 98%, 52%);
+    margin-bottom: 1rem;
+}
+
+.file-upload-design p {
+    margin: 0;
+    font-weight: 500;
+    color: #495057;
+}
+
+.file-upload-browse {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+#file-name-display {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+    color: #3b0278;
+    font-size: 0.9rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background-color: #70047c;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #660068;
+}
