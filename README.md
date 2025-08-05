@@ -1,4 +1,6 @@
-Este repositorio "Formularios-Code" contiene 4 formularios funcionales desarrollados como parte de mi aprendizaje en programación web.
+Este repositorio "Formularios-Code" contiene 4 formularios funcionales desarrollados 
+como parte de mi aprendizaje en programación web.
+
 Cada formulario:
 - Implementa interacción frontend (HTML, CSS, JavaScript)
 - Se conecta a bases de datos MySQL mediante PHP
