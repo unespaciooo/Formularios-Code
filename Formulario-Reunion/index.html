@@ -1,2 +1,128 @@
-####
-inde
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="registro.css">
+    <style>
+        /* Estilos para los botones sociales */
+        .social-login {
+            margin: 25px 0 15px;
+            text-align: center;
+            position: relative;
+        }
+        .social-login::before, .social-login::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #ddd;
+            margin: auto;
+        }
+        .social-login p {
+            margin: 0 10px 15px;
+            color: #666;
+            font-size: 14px;
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+        .social-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .social-btn i {
+            font-size: 18px;
+        }
+        .fa-google { color: #DB4437; }
+        .fa-apple { color: #000000; }
+        .fa-facebook-f { color: #1877F2; }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <form action="registro.php" method="POST" class="register-form">
+            <h2>Crear una Cuenta</h2>
+            <p>Únete a nuestra comunidad. ¡Es rápido y fácil!</p>
+            
+            <div class="form-group">
+                <label for="username">Nombre de Usuario</label>
+                <input type="text" id="username" name="username" required autocomplete="username" autocapitalize="off" autocorrect="off" placeholder="Tu nombre de usuario">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="ejemplo@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required minlength="8" autocomplete="new-password" placeholder="Mínimo 8 caracteres">
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirmar Contraseña</label>
+                <input type="password" id="confirm-password" name="confirm_password" required autocomplete="new-password" placeholder="Repite tu contraseña">
+            </div>
+            
+            <button type="submit" class="submit-btn">Registrarse</button>
+
+            <div class="social-login">
+                <p>O inicia sesión con</p>
+                <div class="social-buttons">
+                    <div class="social-btn" onclick="loginWith('google')" title="Iniciar con Google">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="social-btn" onclick="loginWith('apple')" title="Iniciar con Apple">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <div class="social-btn" onclick="loginWith('facebook')" title="Iniciar con Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-link">
+                <p>¿Ya tienes una cuenta? <a href="login.html">Inicia Sesión</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function loginWith(provider) {
+            // Aquí iría la lógica real de autenticación
+            console.log(`Iniciando sesión con ${provider}`);
+            
+            // Ejemplo básico de redirección (descomenta para producción):
+            // window.location.href = `/auth/${provider}`;
+            
+            // Muestra feedback visual (puedes eliminar esto en producción)
+            const btn = event.currentTarget;
+            btn.style.transform = "scale(0.95)";
+            setTimeout(() => {
+                btn.style.transform = "";
+                alert(`Redirigiendo a autenticación con ${provider}`);
+            }, 200);
+        }
+    </script>
+</body>
+</html>
