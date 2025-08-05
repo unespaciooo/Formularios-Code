@@ -1,1 +1,150 @@
-###
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opinión - EspacioCreativo.com.ar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="opinion.css">
+</head>
+<body>
+    <div class="creative-container">
+        <div class="creative-header">
+            <div class="logo-badge">
+                <i class="fas fa-palette"></i>
+                <span>EspacioCreativo</span>
+            </div>
+            <h1>Tu Opinión <span class="highlight">Nos Inspira</span></h1>
+            <p class="subtitle">Comparte tu experiencia y ayúdanos a crear productos aún mejores</p>
+        </div>
+
+        <form action="opinion.php" method="POST" class="creative-form">
+            <!-- Sección de calificación -->
+            <div class="form-section">
+                <div class="section-header">
+                    <i class="fas fa-star"></i>
+                    <h3>Califica nuestros productos</h3>
+                </div>
+                
+                <fieldset class="form-group">
+                    <div class="rating-container">
+                        <div class="rating">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5" title="Excelente">★</label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4" title="Muy bueno">★</label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3" title="Aceptable">★</label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2" title="Regular">★</label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1" title="Deficiente">★</label>
+                        </div>
+                        <div class="rating-labels">
+                            <span>Deficiente</span>
+                            <span>Excelente</span>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <!-- Sección de aspectos destacados -->
+            <div class="form-section">
+                <div class="section-header">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>¿Qué destacarías?</h3>
+                </div>
+
+                <fieldset class="form-group">
+                    <div class="checkbox-grid">
+                        <div class="checkbox-card">
+                            <input type="checkbox" id="durabilidad" name="aspectos[]" value="Durabilidad">
+                            <label for="durabilidad">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Durabilidad</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-card">
+                            <input type="checkbox" id="colores" name="aspectos[]" value="Colores vivos">
+                            <label for="colores">
+                                <i class="fas fa-palette"></i>
+                                <span>Colores vivos</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-card">
+                            <input type="checkbox" id="adhesion" name="aspectos[]" value="Adhesión">
+                            <label for="adhesion">
+                                <i class="fas fa-sticky-note"></i>
+                                <span>Adhesión</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-card">
+                            <input type="checkbox" id="precision" name="aspectos[]" value="Precisión">
+                            <label for="precision">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>Precisión</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-card">
+                            <input type="checkbox" id="resistencia" name="aspectos[]" value="Resistencia">
+                            <label for="resistencia">
+                                <i class="fas fa-hard-hat"></i>
+                                <span>Resistencia</span>
+                            </label>
+                        </div>
+                        <div class="checkbox-card">
+                            <input type="checkbox" id="entrega" name="aspectos[]" value="Entrega rápida">
+                            <label for="entrega">
+                                <i class="fas fa-shipping-fast"></i>
+                                <span>Entrega rápida</span>
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <!-- Sección de sugerencias -->
+            <div class="form-section">
+                <div class="section-header">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Tus sugerencias</h3>
+                </div>
+
+                <div class="form-group">
+                    <div class="floating-label">
+                        <textarea id="sugerencias" name="sugerencias" rows="4" placeholder=" "></textarea>
+                        <label for="sugerencias">¿Qué producto te gustaría que agreguemos?</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="floating-label">
+                        <input type="email" id="email" name="email" placeholder=" ">
+                        <label for="email">Tu email (opcional)</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar Opinión <i class="fas fa-paper-plane"></i></button>
+        </form>
+
+        <div class="social-section">
+            <p>¡Síguenos para más creatividad!</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/unespaciooo" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/unespaciooo" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.pinterest.com/unespaciooo" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+            
+            <div class="google-review">
+                <a href="https://g.page/r/CXuDsiIpa6VtEBI/review" target="_blank" class="google-btn">
+                    <i class="fab fa-google"></i> Opina en Google Maps
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
